@@ -6,19 +6,19 @@ The project is still very much work in progress, and any help would be much appr
 
 Here are some known areas with issues that need addressing:
 
-  * Shoppping Cart incomplete but now working!
-  * Login system works but needs incomplete
+  * Checkout incomplete
+  * Login system works but needs improving (Validation etc.)
   * Product image storage and retrieval system needed
   * Product page is incomplete
   * Search does not work
-  * No Payment Gateway
+  * No method of payment yet
 
-#Update 21 May '13
+#Update 23 May '13
 
-Quite a few areas of the system have been tidied up and improved, most notably the shopping cart, the category system and the login system. 
+Quite a few areas of the system have been tidied up and improved, most notably the shopping cart, the basics of a checkout, the category system and the login system. 
 
-The shopping cart is moving towards something that may actually be usable quite soon so watch this space! 
+The checkout is moving towards something that may be usable quite soon so watch this space! 
 
-Also planned is an admin area, which is ran as a contained seperate server. This makes it very secure and also easy to access from a development evrironment.
+Also planned is an admin area, which I am considering running as a seperate server. This would make it secure and easy to access from a development envrironment.
 
-By Billy Topley
+Billy Topley
