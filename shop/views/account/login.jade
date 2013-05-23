@@ -1,0 +1,13 @@
+extends layout
+block content
+h2 Log In
+p.lead Log in to existing account
+form(action="/account/login", method="post")
+    fieldset
+      .control-group
+        label(for="email") Email
+        input(type="text", name="email", placeholder="Email")
+        label(for="password") Password
+        input(type="password", name="password", placeholder="Password")
+      .control-group
+        button.btn(type="submit", value="submit") Log In

@@ -1,0 +1,22 @@
+.modal-header
+  a.close(data-dismiss="modal") &times;
+  h3 Register
+.modal-body
+  form(action="/account/register", method="post")
+    fieldset
+      .control-group
+        label(for="name.first") First Name
+        input(type="text", name="name.first", placeholder="First Name")
+        label(for="name.last") Last Name
+        input(type="text",  name="name.last", placeholder="Last Name")
+      .control-group
+        label(for="email") Email
+        input(type="text", name="email", placeholder="Email")
+      .control-group
+        label(for="password") Password
+        input(type="password", name="password", placeholder="Password")
+        label(for="passwordConf") Password Confirm
+        input(type="password", name="passwordConf", placeholder="Password Confirm")
+.modal-footer
+  a.btn(data-dismiss="modal") Close
+  a.btn.btn-primary(onclick="$('.modal-body > form').submit();") Register

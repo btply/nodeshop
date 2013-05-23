@@ -1,0 +1,21 @@
+extend layout
+block content
+  h2 Register
+  p.lead Register a new account
+  form(action="/account/register", method="post")
+    fieldset
+      .control-group
+        label(for="name.first") First Name
+        input(type="text", name="name.first", placeholder="First Name")
+        label(for="name.last") Last Name
+        input(type="text",  name="name.last", placeholder="Last Name")
+      .control-group
+        label(for="email") Email
+        input(type="text", name="email", placeholder="Email")
+      .control-group
+        label(for="password") Password
+        input(type="password", name="password", placeholder="Password")
+        label(for="passwordConf") Password Confirm
+        input(type="password", name="passwordConf", placeholder="Password Confirm")
+      .control-group
+        button.btn(type="submit", value="submit") Submit

@@ -1,0 +1,23 @@
+extend layout
+block content
+  h2 #{title}
+  hr
+  table.table.table-hover
+    thead
+      th Name
+      th Price
+      th Quantity
+      th Remove
+    tbody
+      each product in cart.products
+        tr
+          td  
+            a(href='/product/#{product.seo}') #{product.name}
+          td  £#{product.price}
+          td= product.quantity
+          td 
+            i.icon-remove
+  .row
+     .pull-right
+        h4 Total: £#{cart.total}
+        a(href="/checkout/guest").btn.btn-primary.btn-large Continue As Guest

@@ -1,0 +1,14 @@
+.modal-header
+  a.close(data-dismiss="modal") &times;
+  h3 Log In
+.modal-body
+  form(action="/account/login", method="post")
+    fieldset
+      .control-group
+        label(for="email") Email
+        input(type="text", name="email", placeholder="Email")
+        label(for="password") Password
+        input(type="password", name="password", placeholder="Password")
+.modal-footer
+  a.btn(data-dismiss="modal") Close
+  a.btn.btn-primary(onclick="$('.modal-body > form').submit();") Log In

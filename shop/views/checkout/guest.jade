@@ -1,0 +1,77 @@
+extend layout
+block content
+  h2 #{title}
+  hr
+  .row
+    form(action="/checkout/guest", method="post").form-horizontal
+      fieldset.span6
+        .control-group
+            .control-group
+                label.control-label(for="name.first") First Name 
+                .controls
+                    input(type="text", name="name.first", placeholder="First Name")
+            .control-group
+                label.control-label(for="name.last") Last Name
+                .controls
+                    input(type="text",  name="name.last", placeholder="Last Name")
+        .control-group
+            .control-group
+                label.control-label(for="email") Email
+                .controls
+                    input(type="text", name="email", placeholder="Email Address")
+            .control-group
+                label.control-label(for="emailConf") Confirm Email
+                .controls
+                    input(type="text",  name="emailConf", placeholder="Confirm Email")
+        .control-group
+            .control-group
+                label.control-label(for="password") Password
+                .controls
+                    input(type="password", name="password", placeholder="Password")
+            .control-group
+                label.control-label(for="passwordConf") Password Confirm
+                .controls
+                    input(type="password", name="passwordConf", placeholder="Password Confirm")
+        .control-group
+            .control-group
+                label.control-label(for="contactno") Contact Number
+                .controls
+                    input(type="text", name="contactno", placeholder="Contact Number")
+      fieldset.span6
+        .control-group
+            .control-group
+                label.control-label(for="address.address1") Address 1
+                .controls    
+                    input(type="text", name="address.address1", placeholder="Address 1")
+            .control-group
+                label.control-label(for="address.address2") Address 2
+                .controls 
+                    input(type="text", name="address.address2", placeholder="Address 2")
+        .control-group
+            .control-group
+                label.control-label(for="address.town") Town
+                .controls
+                    input(type="text", name="address.town", placeholder="Town")
+            .control-group
+                label.control-label(for="address.province") Province
+                .controls
+                    input(type="text", name="address.province", placeholder="Province")
+        .control-group
+            .control-group
+                label.control-label(for="address.pcd") Zip / Postal Code
+                .controls
+                    input(type="text", name="address.pcd", placeholder="Zip / Postal Code")
+            .control-group
+                label.control-label(for="address.country") Country
+                .controls
+                    input(type="text", name="address.country", placeholder="Country")
+        .control-group
+            .control-group
+                .controls
+                    label.checkbox
+                        input(type='checkbox') 
+                        span.help-inline Accept 
+                            a(data-toggle="modal", data-target="#modal", href="/modals/terms") Terms & Conditions
+            .control-group
+                a(onclick="$('.row > form').submit();").btn.btn-primary.pull-right Continue
+    

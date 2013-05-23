@@ -1,0 +1,10 @@
+@import url("http://fonts.googleapis.com/css?family=Open\+Sans");
+body {
+  background-color: #fff;
+  background: url("stripe.png");
+  color: #242424;
+  font-family: 'Open Sans', sans-serif;
+}
+.thumbnail h6 p {
+    color:#333;
+}

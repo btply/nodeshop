@@ -1,0 +1,14 @@
+{
+    "name" : "NodeShop",
+    "version" : "0.0.2",
+    "dependencies" : {
+        "express" : "*",
+        "jade" : "*",
+        "passport" : "*",
+        "passport-local" : "*",
+        "connect-mongo" : "*",
+        "mongoose" : "*",
+        "bcrypt" : "*",
+        "underscore" : "*"
+    }
+}
