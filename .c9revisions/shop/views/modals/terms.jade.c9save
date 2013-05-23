@@ -1,2 +1,0 @@
-{"ts":1369310465888,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
-{"contributors":[],"silentsave":false,"ts":1369310549105,"patch":[[{"diffs":[[1,".modal-header\n  a.close(data-dismiss=\"modal\") &times;\n  h3 Terms And Conditions\n.modal-body\n  p. An area for the terms and conditions of sale.\n.modal-footer\n  a.btn(data-dismiss=\"modal\") Close"]],"start1":0,"start2":0,"length1":0,"length2":192}]],"length":192,"saved":false}

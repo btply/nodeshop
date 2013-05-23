@@ -1,3 +1,0 @@
-{"ts":1369170516077,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
-{"contributors":[],"silentsave":false,"ts":1369170570352,"patch":[[{"diffs":[[1,"extend layout\nblock content\n  h1 Thank-you for registering!\n  p.lead Your account will now be set up.\n"]],"start1":0,"start2":0,"length1":0,"length2":102}]],"length":102,"saved":false}
-{"ts":1369170589023,"patch":[[{"diffs":[[0,"unt "],[-1,"will"],[1,"has"],[0," now be"],[1,"en"],[0," set up"],[-1,"."],[1," and you should be able to log in above!"],[0,"\n"]],"start1":78,"start2":78,"length1":24,"length2":64}]],"length":142,"saved":false}
