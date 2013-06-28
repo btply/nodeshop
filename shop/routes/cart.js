@@ -48,7 +48,7 @@ module.exports = {
             });
             
             // Respond with rendered cart
-            res.render('cart', {cart: req.session.cart});
+            res.render('cart/cart', {cart: req.session.cart});
         
         });
         } catch(err) {
@@ -87,7 +87,7 @@ module.exports = {
             } 
             
             // Respond with rendered cart
-            res.render('cart', {cart: req.session.cart});
+            res.render('cart/cart', {cart: req.session.cart});
 
     },
 };

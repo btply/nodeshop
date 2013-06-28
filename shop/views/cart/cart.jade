@@ -1,0 +1,19 @@
+.btn-group.pull-right
+    -if (!cart)
+        button.btn
+            i.icon-shopping-cart
+            b  Cart - 0 
+    -else
+        button.btn.dropdown-toggle(data-toggle="dropdown")
+            i.icon-shopping-cart
+            b  Cart - #{cart.count} 
+            span.caret
+        ul.dropdown-menu
+            each product in cart.products
+                li
+                  a(href='/product/#{product.seo}') 
+                    i(remId='#{product.id}').icon-remove.pull-right
+                    | #{product.name}
+            li.divider
+            li
+              a(href='/checkout/cart') Checkout

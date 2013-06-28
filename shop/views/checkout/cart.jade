@@ -20,4 +20,7 @@ block content
   .row
      .pull-right
         h4 Total: £#{cart.total}
-        a(href="/checkout/guest").btn.btn-primary.btn-large Continue As Guest
+        if (!locals.logged)
+            a(href="/checkout/guest").btn.btn-primary Continue As Guest
+        else
+            a(href="/checkout/order").btn.btn-primary Continue As #{user.name.first}

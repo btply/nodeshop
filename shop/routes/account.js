@@ -1,18 +1,9 @@
 var db = require('../data');
-var config = require('../config.json')
+var config = require('../config.json');
 
 module.exports = {
-
-    // Get login modal
-    getLoginModal: function(req, res) {
-        res.render('modals/login');
-    },
-
-    // Get register modal
-    getRegisterModal: function(req, res) {
-        res.render('modals/register');
-    },
-
+    
+    // Handle posted register form
     postRegister: function(req, res) {
     
         // Save user in database
@@ -30,11 +21,15 @@ module.exports = {
     
     // Get registered page
     getRegistered: function(req, res) {
+        
+        // Get categories for top nav
         db.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
+            
+            // Render registered page
             res.render('account/registered', {
                 store: config.store.name,
-                title: 'Thank-you for registering!',
+                title: 'Thanks for registering!',
                 logged: req.isAuthenticated(),
                 user: req.user,
                 cart: req.session.cart,
@@ -43,10 +38,15 @@ module.exports = {
         });
     },
 
+    // Get account page
     getAccount: function(req, res) {
+        
+        // Get categories for top nav
         db.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
-            res.render('account', {
+            
+            // Render account page
+            res.render('account/account', {
                 store: config.store.name,
                 title: 'My Account',
                 logged: req.isAuthenticated(),
@@ -57,6 +57,7 @@ module.exports = {
         });
     },
 
+    // Log user out when account/logout requested
     getLogout: function(req, res){
     
         // Passport logout function
@@ -65,5 +66,5 @@ module.exports = {
         // Redirect to home page
         res.redirect('/');
     
-    }
+    },
 };

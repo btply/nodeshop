@@ -6,21 +6,21 @@ var bcrypt = require('bcrypt');
 // Define schema
 var UserSchema = new Schema({
     name : { 
-        first: { type: String, required: true } 
-      , last: { type: String, required: true }
-    }
-  , address : {
-      address1: {type:String, required:false},
-      address2: {type:String, required:false},
-      town: {type:String, required:false},
-      province: {type:String, required:false},
-      country: {type:String, required:false},
-      pcd: {type:String, required:false}
-  }
-  , contactno: {type: Number, required: false}
-  , email: { type: String, required: true, unique: true }
-  , salt: { type: String, required: true }
-  , hash: { type: String, required: true }
+        first: { type: String, required: true },
+        last: { type: String, required: true }
+    },
+    address : {       
+        address1: {type:String, required:false},
+        address2: {type:String, required:false},
+        town: {type:String, required:false},
+        province: {type:String, required:false},
+        country: {type:String, required:false},
+        pcd: {type:String, required:false}
+    },
+    contactNum: {type: Number, required: false},
+    email: { type: String, required: true, unique: true },
+    salt: { type: String, required: true },
+    hash: { type: String, required: true }
   });
 
 

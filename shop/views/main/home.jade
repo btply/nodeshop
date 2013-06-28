@@ -1,0 +1,16 @@
+extends layout
+block content
+  a(href="#").thumbnail
+    img(src="http://placehold.it/930x160", alt="")
+  hr
+  h4 Featured
+  ul.thumbnails
+      each product in featured
+        li.span3
+          a(href="/product/#{product.seo}").thumbnail
+            img(src="http://placehold.it/210x160", alt="")
+            h6 #{product.name}
+              p.pull-right £#{product.pricing.retail}
+block scripts
+  
+  

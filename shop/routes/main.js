@@ -17,7 +17,7 @@ module.exports = {
                 if (err) {console.log(err)}
                 
                 // Render home page
-                res.render('home', {
+                res.render('main/home', {
                     store: config.store.name,
                     title: config.store.tagline,
                     logged: req.isAuthenticated(),
@@ -32,9 +32,13 @@ module.exports = {
 
     // Get about page
     getAbout: function(req, res) {
+        
+        // Get categories for top nav
         db.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
-            res.render('about', {
+            
+            // Render contact page
+            res.render('main/about', {
                 store: config.store.name,
                 title: 'About',
                 logged: req.isAuthenticated(),
@@ -47,9 +51,13 @@ module.exports = {
     
     // Get contact page
     getContact: function(req, res) {
+        
+        // Get categories for top nav
         db.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
-            res.render('contact', {
+            
+            // Render contact page
+            res.render('main/contact', {
                 store: config.store.name,
                 title: 'Contact',
                 logged: req.isAuthenticated(),
@@ -59,10 +67,4 @@ module.exports = {
             });
         });
     },
-    
-    // Get terms and conditions modal
-    getTermsModal: function(req, res) {
-        res.render('modals/terms');
-    }
-
 };

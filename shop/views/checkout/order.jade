@@ -1,0 +1,11 @@
+extend layout
+block content
+  h2 #{title}
+  hr
+  .row
+    form(action="/checkout/order", method="post").form-horizontal
+      fieldset.span6
+        .control-group
+            a(onclick="").btn.btn-primary.pull-right Pay
+block scripts
+        script(src="/js/controller/checkout/order.js")

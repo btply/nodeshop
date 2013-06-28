@@ -53,3 +53,8 @@ require('./shop/router')(app, passport);
 // Listen for requests
 app.listen(process.env.PORT);
 console.log('Listening on port ' + process.env.PORT);
+
+// Handle all uncaught errors
+process.on('uncaughtException', function(err) {
+    console.log(err);
+});

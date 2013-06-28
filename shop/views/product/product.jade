@@ -1,0 +1,14 @@
+extend layout
+block content
+    h2 #{product.name}
+    hr
+    .row
+      .span6
+        img(src="http://placehold.it/420x320", alt="")
+      .span6
+        hr
+        p Make:  #{product.make}
+        p Model:  #{product.model}
+        hr
+        h3.pull-left £#{product.pricing.retail}
+        a(addId='#{product.id}').btn.btn-primary.btn-large.pull-right Add to cart

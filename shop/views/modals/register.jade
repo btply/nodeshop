@@ -2,21 +2,32 @@
   a.close(data-dismiss="modal") &times;
   h3 Register
 .modal-body
-  form(action="/account/register", method="post")
+  form(action="/account/register", method="post").form-horizontal
     fieldset
-      .control-group
-        label(for="name.first") First Name
-        input(type="text", name="name.first", placeholder="First Name")
-        label(for="name.last") Last Name
-        input(type="text",  name="name.last", placeholder="Last Name")
-      .control-group
-        label(for="email") Email
-        input(type="text", name="email", placeholder="Email")
-      .control-group
-        label(for="password") Password
-        input(type="password", name="password", placeholder="Password")
-        label(for="passwordConf") Password Confirm
-        input(type="password", name="passwordConf", placeholder="Password Confirm")
+        br
+        .control-group
+            .control-group
+                label.control-label(for="name.first") First Name 
+                .controls
+                    input(type="text", name="name.first", placeholder="First Name")
+            .control-group
+                label.control-label(for="name.last") Last Name
+                .controls
+                    input(type="text",  name="name.last", placeholder="Last Name")
+        .control-group
+            .control-group
+                label.control-label(for="email") Email
+                .controls
+                    input(type="text", name="email", placeholder="Email Address")
+        .control-group
+            .control-group
+                label.control-label(for="password") Password
+                .controls
+                    input(type="password", name="password", placeholder="Password")
+            .control-group
+                label.control-label(for="passwordConf") Password Confirm
+                .controls
+                    input(type="password", name="passwordConf", placeholder="Password Confirm")
 .modal-footer
   a.btn(data-dismiss="modal") Close
   a.btn.btn-primary(onclick="$('.modal-body > form').submit();") Register

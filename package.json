@@ -9,6 +9,8 @@
         "connect-mongo" : "*",
         "mongoose" : "*",
         "bcrypt" : "*",
-        "underscore" : "*"
+        "underscore" : "*",
+        "request" : "*",
+        "querystring" : "*"
     }
 }

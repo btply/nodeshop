@@ -26,14 +26,23 @@ html(lang="en")
                   a(href="/account/home") Account
                 li       
                   a(href="/account/logout") Logout
+            #cart
+              include cart/cart
     .container
       a(href="/")
         img(src="/img/style/header.png")
+      .navbar
+        .navbar-inner
+          ul.nav
+            each category in categories
+              li
+                a(href="/category/#{category.seo}") #{category.name}
+          form.navbar-search.pull-right
+            input.search-query(type="text", placeholder="Search")
       .main
-        block content
+        h1= title
       hr
     script(src="http://code.jquery.com/jquery.min.js", type="text/javascript")
     script(src="/js/bootstrap.min.js", type="text/javascript")
-    script(src="/js/plugins/jquery.validate.min.js", type="text/javascript")
     script(src="/js/controller/main.js")
     block scripts
