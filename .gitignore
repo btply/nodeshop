@@ -1,3 +1,5 @@
 .c9revisions/
 .git/
 node_modules/
+.gitignore
+Procfile
