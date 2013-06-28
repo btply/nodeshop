@@ -2,16 +2,22 @@
 
 This is my take on a Node.js powered E-Commerce system. The main framework used is Express, with Jade handling the view engine and Passport handling user authentication.
 
-The project is still very much work in progress, and any help would be much appreciated as I am still learning Node.js
+The project is still very much work in progress, and any help would be much appreciated.
 
 Here are some known areas with issues that need addressing:
 
   * Checkout incomplete
-  * Login system works but needs improving (Validation etc.)
   * Product image storage and retrieval system needed
   * Product page is incomplete
   * Search does not work
   * No method of payment yet
+
+
+#Update 28 Jun '13
+
+Tidied up some more code, updated the file structure. Added a guest checkout with form validation. Coming soon will be the order form with some kind of payment system, probably paypal.
+
+Started working on an admin area which is coming along, will probably be in the next release.
 
 #Update 23 May '13
 
