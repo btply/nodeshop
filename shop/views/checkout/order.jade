@@ -1,11 +1,47 @@
 extend layout
 block content
-  h2 #{title}
-  hr
+  .row
+    h2 #{title}
+    hr
+  .row
+      table.table.table-hover
+        thead
+          th Name
+          th Price
+          th Quantity
+          th Remove
+        tbody
+          each product in cart.products
+            tr
+              td  
+                a(href='/product/#{product.seo}') #{product.name}
+              td  £#{product.price}
+              td= product.quantity
+              td 
+                i.icon-remove
+  .row
+     .pull-right
+        h4 Total: £#{cart.total}
+  .row
+    h2 Address
+    hr
+  .row 
+    table.table
+      thead
+       tr
+        th  Select
+        th  Address 1
+        th  Town
+        th  Zip/Postal
+      tr
+       tbody
+        td  o
+        td= user.address.address1
+        td= user.address.town
+        td= user.address.pcd
   .row
     form(action="/checkout/order", method="post").form-horizontal
-      fieldset.span6
         .control-group
-            a(onclick="").btn.btn-primary.pull-right Pay
+            a(onclick="$('.row > form').submit();").btn.btn-primary.pull-right Pay
 block scripts
         script(src="/js/controller/checkout/order.js")

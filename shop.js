@@ -11,7 +11,6 @@ var config = require('./shop/config.json');
 var info = require('./package.json');
 
 console.log('NodeShop Started!');
-console.log('Running Version ' + info.version);
 
 // Connect to database
 database.startup(config.connection);
@@ -52,7 +51,8 @@ require('./shop/router')(app, passport);
 
 // Listen for requests
 app.listen(process.env.PORT);
-console.log('Listening on port ' + process.env.PORT);
+
+console.log('NodeShop v' + info.version + ' listening on port ' + process.env.PORT);
 
 // Handle all uncaught errors
 process.on('uncaughtException', function(err) {

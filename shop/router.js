@@ -1,7 +1,7 @@
 // Require routes
 var account = require('./routes/account');
 var main = require('./routes/main');
-var modals = require('./routes/modals')
+var modals = require('./routes/modals');
 var product = require('./routes/product');
 var cart = require('./routes/cart');
 var category = require('./routes/category');

@@ -10,6 +10,7 @@ var ProductSchema = new Schema({
   upc: { type: String, required: false },
   seo: { type: String, required: false },
   featured: { type: Boolean, required: false },
+  date: { type: Date, default: Date.now },
 
   shipping: {
     weight: { type: Number, required: false },

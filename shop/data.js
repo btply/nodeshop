@@ -24,12 +24,12 @@ module.exports = {
         
         // Add listener for opened connection
         mongoose.connection.on('open', function() {
-            console.log('Connected to MongoDB!');
+            console.log('Connected to database!');
         });
     },
 
     // Get categories for top nav
-    getTopCategories: function(callback) {
+    getTopCategories: function(callback){ 
         var query = Category.find({topnav : true});
         query.exec(function(err, categories) { 
             
@@ -142,8 +142,9 @@ module.exports = {
         newUser.save(function(err) {
             if (err) {throw err;}
             
+            
             // Execute callback passed from route
-            callback(null, userInfo);
+            callback(null, newUser);
         });
     },
 

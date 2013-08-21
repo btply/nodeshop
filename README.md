@@ -11,13 +11,27 @@ Here are some known areas with issues that need addressing:
   * Product page is incomplete
   * Search does not work
   * No method of payment yet
+  
 
+#Update 21 August '13
 
-#Update 28 Jun '13
+Sorry it's been a while but I've been busy recently looking for a new job. 
+
+I'm creating a google group for anyone who would like to get involved witht he project, this will be a place to discuss features, bugs, suggestions and anything else about the project.
+
+Here's whats new in 0.0.6:
+
+  * Auto Login after registered
+  * Added more to the order page
+  * Basics of an admin area
+  * Started product page in admin area
+  * Few other bits that i've forgot
+
+#Update 28 June '13
 
 Tidied up some more code, updated the file structure. Added a guest checkout with form validation. Coming soon will be the order form with some kind of payment system, probably paypal.
 
-Started working on an admin area which is coming along, will probably be in the next release.
+Started working on an admin area which is slowly coming along, will probably be in the next release.
 
 #Update 23 May '13
 

@@ -1,6 +1,6 @@
 var db = require("../data");
 var config = require("../config.json");
-var request = require('request');
+var passport = require('passport');
 
 // Export functions
 module.exports = {
@@ -18,13 +18,23 @@ module.exports = {
     
     // Guest checkout
     getGuest: function (req,res) {
+        
+            if(!req.isAuthenticated()) {
+                
                 res.render('checkout/guest', {
+                    
                 store: config.store.name,
                 title: 'Guest Checkout',
                 logged: req.isAuthenticated(),
                 user: req.user,
                 cart: req.session.cart,
-            });
+                });
+                
+            } else {
+                
+                // Redirect if logged in
+                res.redirect('/checkout/order');
+            }
     },
     
     // Handle posted guest checkout
@@ -45,10 +55,19 @@ module.exports = {
             country : req.param('addressCountry')
         }, 
             
-            function(err) {
+            function(err, newUser) {
                 if (err) {console.log(err);}
                 
-                res.redirect('/checkout/order');
+                // Set user to user just saved
+                req.user = newUser;
+                
+                // Log in new user with passport
+                passport.authenticate('local')(req, res, function () {
+                    
+                    // Redirect new user to order page
+                    res.redirect('/checkout/order');
+                
+                });  
         });
     },
 
