@@ -1,0 +1,48 @@
+doctype 5
+html(lang="en")
+  head
+    title #{store} | #{title}
+    link(href="/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/css/main.css", rel="stylesheet")
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+            .container-fluid
+                button.btn.btn-navbar(type="button", data-toggle="collapse", data-target=".nav-collapse")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand(href="/") NodeShop
+                .nav-collapse.collapse
+                    ul.nav
+                        li
+                            a(href="/") Dash
+                        li
+                            a(href="#") About
+                        li
+                            a(href="#") Settings
+                        li
+                            a(href="#") Store Front
+    .container-fluid
+        .row-fluid
+            .span2
+                .well.sidebar-nav
+                    ul.nav.nav-list
+                        li.nav-header Office
+                        li
+                            a(href="#") Orders
+                        li
+                            a(href="#") Customers
+                        li
+                            a(href="#") Reports
+                        li.nav-header Catalog
+                        li.active
+                            a(href="/products") Products
+                        li
+                            a(href="#") Categories
+                        li
+                            a(href="#") Featured
+                        li
+                            a(href="#") Banners
+            .span10
+                block content

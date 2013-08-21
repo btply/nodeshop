@@ -1,0 +1,20 @@
+extends layout
+block content
+  .page-header
+    h2 Products
+  table.table.table-hover
+    thead
+      tr
+        th Name
+        th Make
+        th Model
+        th Featured
+        th Price
+    tbody
+      each product in products
+        tr(onclick="document.location = '/products/#{product._id}';")
+          td #{product.name}
+          td #{product.make}
+          td #{product.model}
+          td #{product.featured}
+          td #{product.pricing.retail}
