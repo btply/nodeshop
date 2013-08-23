@@ -1,5 +1,6 @@
 var db = require('../data');
 var config = require('../config.json');
+var passport = require('passport');
 
 module.exports = {
     
@@ -13,9 +14,20 @@ module.exports = {
                 email : req.param('email'),
                 password : req.param('password')
             }, 
-            
-            function(err,docs) {
-                res.redirect('/account/registered');
+             
+            function(err, newUser) {
+                if (err) {console.log(err);}
+                
+                // Set user to user just saved
+                req.user = newUser;
+                
+                // Log in new user with passport
+                passport.authenticate('local')(req, res, function () {
+                    
+                    // Redirect new user to order page
+                    res.redirect('/account/registered');
+                
+                });  
         });
     },
     

@@ -135,8 +135,6 @@ module.exports = {
             email: userInfo.email,
             password: userInfo.password
         });
-    
-        console.log(newUser);
         
         // Save into database
         newUser.save(function(err) {
