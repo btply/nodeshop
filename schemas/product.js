@@ -1,7 +1,10 @@
+// Require mongoose and mongoose schema
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+// Define product schema
 var ProductSchema = new Schema({
+    
   sku: { type: String, required: false },
   category: { type: String, required: false },
   name: { type: String, required: true },
@@ -34,4 +37,5 @@ var ProductSchema = new Schema({
   },
 });
 
+// Export product model
 module.exports = mongoose.model('Product', ProductSchema);

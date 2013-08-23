@@ -1,2 +1,5 @@
+.gitignore
+Procfile
 /.c9revisions
 /node_modules
+/.git

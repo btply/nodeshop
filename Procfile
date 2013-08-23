@@ -1,1 +1,1 @@
-web: node admin.js
+web: node shop.js
