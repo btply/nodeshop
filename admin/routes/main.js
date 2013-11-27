@@ -1,18 +1,17 @@
 // Require needed modules
-var db = require('../data'),
-config = require('../../shop/config.json');
+var config = require('../../shop/config.json');
 
 // Export functions
 module.exports = {
 
-    // Get shop home page
+    // Get dashboard
     getHome: function(req, res) {
         
                 
-        // Render home page
+        // Render dash
         res.render('main/home', {
             store: config.store.name,
-            title: config.store.tagline,
+            title: 'Dash',
             logged: req.isAuthenticated(),
             user: req.user,
         });

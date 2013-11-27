@@ -1,4 +1,48 @@
-extends layout
+extend ../layout
 block content
-  .page-header
-    h2 #{product.name}
+    form(action="/products/#{product._id}", method="post", role="form", name="form").form-horizontal#form
+        .panel.panel-default
+            .panel-heading Details
+            .panel-body
+                .form-group
+                    label.control-label.col-sm-1(for="name") Name
+                    .col-sm-3
+                        input.form-control(type="text", name="name", placeholder="Name", value=product.name)
+                    label.control-label.col-sm-1(for="make") Make
+                    .col-sm-3
+                        input.form-control(type="text",  name="make", placeholder="Make", value=product.make)
+                    label.control-label.col-sm-1(for="model") Model
+                    .col-sm-3
+                        input.form-control(type="text", name="model", placeholder="Model", value=product.model)
+                .form-group
+                    label.control-label.col-sm-1(for="category") Category
+                    .col-sm-3
+                        input.form-control(type="text", name="category", placeholder="Category", value=product.category)
+                    label.control-label.col-sm-1(for="seo") SEO
+                    .col-sm-3
+                        input.form-control(type="text", name="seo", placeholder="SEO", value=product.seo)
+        .panel.panel-default
+            .panel-heading Pricing
+            .panel-body
+                .form-group
+                    label.control-label.col-sm-1(for="retail") Retail
+                    .col-sm-3
+                        input.form-control(type="text", name="retail", placeholder="", value=product.pricing.retail)
+                    label.control-label.col-sm-1(for="sale") Sale
+                    .col-sm-3
+                        input.form-control(type="text",  name="sale", placeholder="", value=product.pricing.sale)
+                    label.control-label.col-sm-1(for="cost") Cost
+                    .col-sm-3
+                        input.form-control(type="text", name="cost", placeholder="", value=product.pricing.cost)
+        .col-sm-1
+            .form-group
+                a.btn.btn-danger.btn-block#delete(product="#{product._id}") Delete 
+                    span.glyphicon.glyphicon-remove
+        .col-sm-1.col-sm-offset-10
+            .form-group
+                button(type="submit").btn.btn-primary.btn-block Save 
+                    span.glyphicon.glyphicon-save
+block scripts
+    script(src="/js/plugins/jquery.validate.min.js", type="text/javascript")
+    script(src="/js/plugins/typeahead.min.min.js")
+    script(src="/js/controller/product.js")

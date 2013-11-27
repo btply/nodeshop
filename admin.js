@@ -5,17 +5,32 @@ var app = express();
 // Require mongostore session storage
 var mongoStore = require('connect-mongo')(express);
 var passport = require('passport');
-// Require needed files
-var database = require('./admin/data');
 var config = require('./shop/config.json');
 var info = require('./package.json');
+// Mongoose for database
+var mongoose = require('mongoose');
+// User model and local strategy for passport
+var User = require('./schemas/user');
+var LocalStrategy = require('passport-local').Strategy;
 
 console.log('NodeShop Admin Started!');
 
-// Connect to database
-database.startup(config.connection);
+// Passport authentication
+passport.use(new LocalStrategy({usernameField: 'email'},function(email, password, done) {User.authenticate(email, password, function(err, user) {return done(err, user)})}));
+
+// Session store
+passport.serializeUser(function(user, done) {done(null, user.id)});
+passport.deserializeUser(function(id, done) {User.findById(id, function (err, user) {done(err, user)})});
+
+// Connect mongoose database
+mongoose.connect(config.connection);
 console.log('Connecting to database...');
-  
+
+// Listen for mongoose connection
+mongoose.connection.on('open', function() {
+    console.log('Connected to database!');
+});
+
 // Configure Express
 app.configure(function(){
     
