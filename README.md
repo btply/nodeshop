@@ -1,6 +1,8 @@
 # NodeShop
 
-This is my take on a Node.js powered E-Commerce system. The main framework used is Express, with Jade handling the view engine and Passport handling user authentication.
+Nodeshop is a Node.js powered E-Commerce system. Express is used for back-end framework, with Jade handling the view engine and Passport for user authentication. 
+
+Bootstrap is used as front-end framework because it's just plain great.
 
 The project is still very much work in progress, and any help would be much appreciated.
 
@@ -8,9 +10,16 @@ Here are some known areas with issues that need addressing:
 
   * Checkout incomplete
   * Product image storage and retrieval system needed
-  * Product page is incomplete
   * Search does not work
   * No method of payment yet
+
+#Update 27 November '13
+
+Heres a little update to prove I'm alive and still working on NodeShop.
+
+Updated the admin area to bootstrap 3.0, the shop front is currently in progress as well.
+
+Also made the admin area more functional, please dont mess up the DB too much...
   
 
 #Update 21 August '13
