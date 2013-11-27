@@ -1,0 +1,17 @@
+extends ../layout
+block content
+    table.table.table-hover
+        thead
+          tr
+            th Name
+            th SEO
+            th Top Nav
+        tbody
+          each category in categories
+            tr(onclick="document.location = '/categories/#{category._id}';")
+              td #{category.name}
+              td #{category.seo}
+              td #{category.topnav}
+    .col-sm-1.col-sm-offset-11
+        a.btn.btn-primary.btn-block(href="/categories/new") New 
+            span.glyphicon.glyphicon-plus

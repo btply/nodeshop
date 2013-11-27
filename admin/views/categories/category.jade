@@ -1,0 +1,29 @@
+extend ../layout
+block content
+  form(action="/categories/#{category._id}", method="post", role="form", name="form").form-horizontal#form
+    .panel.panel-default
+        .panel-heading Details
+        .panel-body
+            .form-group
+                label.control-label.col-sm-1(for="name") Name
+                .col-sm-5
+                    input.form-control(type="text", name="name", placeholder="Name", value=category.name, required)
+                label.control-label.col-sm-1(for="seo") SEO
+                .col-sm-5
+                    input.form-control(type="text", name="seo", placeholder="SEO", value=category.seo, required)
+            .form-group
+                .col-sm-4.col-sm-offset-1
+                  .checkbox
+                    input(type="checkbox", name="topnav", checked=category.topnav)
+                    label Show category in top navigation bar
+    .col-sm-1
+        .form-group
+            a.btn.btn-danger.btn-block#delete(category="#{category._id}") Delete 
+                span.glyphicon.glyphicon-remove
+    .col-sm-1.col-sm-offset-10
+        .form-group
+            button(type="submit").btn.btn-primary.btn-block Save 
+                span.glyphicon.glyphicon-save
+block scripts
+    script(src="/js/plugins/jquery.validate.min.js", type="text/javascript")
+    script(src="/js/controller/category.js", type="text/javascript")

@@ -1,0 +1,55 @@
+doctype 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/css/sticky-footer.css", rel="stylesheet")
+    title #{store} | #{title}
+  body
+    #wrap
+        navbar.navbar-default.navbar-fixed-top(role="navigation")
+                .navbar-header
+                    button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="/") #{store} Admin
+                .navbar-collapse.collapse
+                        ul.nav.navbar-nav
+                            li.active
+                                a(href="/") Dash
+                            li.dropdown
+                                a.dropdown-toggle(href="#", data-toggle="dropdown") Office
+                                    b.caret
+                                ul.dropdown-menu
+                                    li
+                                        a(href="/orders")  Orders
+                                    li
+                                        a(href="/customers")  Customers
+                                    li
+                                        a(href="#")  Reports
+                            li.dropdown
+                                a.dropdown-toggle(href="#", data-toggle="dropdown") Catalog
+                                    b.caret
+                                ul.dropdown-menu
+                                    li
+                                        a(href="/products")  Products
+                                    li
+                                        a(href="/categories")  Categories
+                                    li
+                                        a(href="/featued")  Banners
+                            li
+                                a(href="#") Settings
+                            li
+                                a(href="#") Store Front
+        .container
+            .page-header
+                h2 #{title}
+            block content
+    #footer
+      .container
+        p.text-muted Admin Area
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js", type="text/javascript")
+    script(src="/js/bootstrap.min.js", type="text/javascript")
+    block scripts
